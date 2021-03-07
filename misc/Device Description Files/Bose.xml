@@ -1,0 +1,7695 @@
+<homegearDevice version="1">
+	<supportedDevices>
+		<device id="Bose">
+			<description>Bose</description>
+			<typeNumber>0x1</typeNumber>
+			<minFirmwareVersion>0</minFirmwareVersion>
+		</device>
+	</supportedDevices>
+	<properties/>
+	<functions>
+		<function channel="0" type="MAINTENANCE" channelCount="1">
+			<properties>
+				<internal>true</internal>
+			</properties>
+			<configParameters>maint_ch_master</configParameters>
+			<variables>maint_ch_values</variables>
+		</function>
+		<function channel="1" type="SPEAKER" channelCount="1">
+			<properties>
+				<linkSenderFunctionTypes>
+					<type>SPEAKER_LINK</type>
+				</linkSenderFunctionTypes>
+				<linkReceiverFunctionTypes>
+					<type>SPEAKER_LINK</type>
+				</linkReceiverFunctionTypes>
+			</properties>
+			<configParameters>speaker_config</configParameters>
+			<variables>speaker_valueset</variables>
+		</function>
+	</functions>
+	<packets>
+		<packet id="SET_SPEAKER">
+			<direction>fromCentral</direction>
+			<function1>play_info</function1>
+			<function2>/speaker</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>app_key</key>
+					<parameterId>PLAY_INFO:APP_KEY</parameterId>
+				</element>
+				<element>
+					<key>url</key>
+					<parameterId>PLAY_INFO:URL</parameterId>
+				</element>
+				<element>
+					<key>service</key>
+					<parameterId>PLAY_INFO:SERVICE</parameterId>
+				</element>
+				<element>
+					<key>reason</key>
+					<parameterId>PLAY_INFO:REASON</parameterId>
+				</element>
+				<element>
+					<key>message</key>
+					<parameterId>PLAY_INFO:MESSAGE</parameterId>
+				</element>
+				<element>
+					<key>volume</key>
+					<parameterId>PLAY_INFO:VOLUME</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_TTS">
+			<direction>fromCentral</direction>
+			<function1>play_info</function1>
+			<function2>/speaker</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>app_key</key>
+					<parameterId>PLAY_INFO:APP_KEY</parameterId>
+				</element>
+				<element>
+					<key>service</key>
+					<parameterId>PLAY_INFO:SERVICE</parameterId>
+				</element>
+				<element>
+					<key>reason</key>
+					<parameterId>PLAY_INFO:REASON</parameterId>
+				</element>
+				<element>
+					<key>message</key>
+					<parameterId>PLAY_TTS</parameterId>
+				</element>
+				<element>
+					<key>volume</key>
+					<parameterId>PLAY_INFO:VOLUME</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PLAY">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PLAY</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PAUSE">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PAUSE</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PLAY_PAUSE">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PLAY_PAUSE</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PREV_TRACK">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PREV_TRACK</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_NEXT_TRACK">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>NEXT_TRACK</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_MUTE">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>MUTE</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_SHUFFLE_ON">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>SHUFFLE_ON</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_SHUFFLE_OFF">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>SHUFFLE_OFF</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_REPEAT_ONE">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>REPEAT_ONE</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_REPEAT_ALL">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>REPEAT_ALL</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_REPEAT_OFF">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>REPEAT_OFF</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_ADD_FAVORITE">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>ADD_FAVORITE</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_REMOVE_FAVORITE">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>REMOVE_FAVORITE</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_THUMBS_UP">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>THUMBS_UP</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_THUMBS_DOWN">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>THUMBS_DOWN</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_BOOKMARK">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<constValueString>press</constValueString>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>BOOKMARK</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PRESET1">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<parameterId>KEY:PRESET1</parameterId>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PRESET_1</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PRESET2">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<parameterId>KEY:PRESET2</parameterId>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PRESET_2</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PRESET3">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<parameterId>KEY:PRESET3</parameterId>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PRESET_3</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PRESET4">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<parameterId>KEY:PRESET4</parameterId>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PRESET_4</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PRESET5">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<parameterId>KEY:PRESET5</parameterId>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PRESET_5</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_PRESET6">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<parameterId>KEY:PRESET6</parameterId>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>PRESET_6</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_KEY_POWER">
+			<direction>fromCentral</direction>
+			<function1>key</function1>
+			<function2>/key</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>state</key>
+					<parameterId>KEY:POWER</parameterId>
+				</element>
+				<element>
+					<key>sender</key>
+					<constValueString>Gabbo</constValueString>
+				</element>
+				<element>
+					<key>key</key>
+					<constValueString>POWER</constValueString>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_VOLUME">
+			<direction>fromCentral</direction>
+			<function1>volume</function1>
+			<function2>/volume</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>volume</key>
+					<parameterId>VOLUME:TARGET_VOLUME</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE1">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE1</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT1</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE2">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE2</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT2</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE3">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE3</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT3</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE4">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE4</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT4</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE5">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE5</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT5</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE6">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE6</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT6</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE7">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE7</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT7</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE8">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE8</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT8</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE9">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE9</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT9</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE10">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE10</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT10</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE11">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE11</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT11</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE12">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE12</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT12</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE13">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE13</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT13</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE14">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE14</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT14</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE15">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE15</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT15</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE16">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE16</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT16</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE17">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE17</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT17</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE18">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE18</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT18</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE19">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE19</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT19</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_SOURCE20">
+			<direction>fromCentral</direction>
+			<function1>ContentItem</function1>
+			<function2>/select</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>SOURCE_ITEM:SOURCE20</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>SOURCE_ITEM:SOURCE_ACCOUNT20</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_ZONE_SLAVE_ID">
+			<direction>fromCentral</direction>
+			<function1>zone</function1>
+			<function2>/setZone</function2>
+			<channel>1</channel>
+		</packet>
+		<packet id="SET_ZONE_SLAVE_SERIAL">
+			<direction>fromCentral</direction>
+			<function1>zone</function1>
+			<function2>/setZone</function2>
+			<channel>1</channel>
+		</packet>
+		<packet id="SET_ADD_ZONE_SLAVE_ID">
+			<direction>fromCentral</direction>
+			<function1>zone</function1>
+			<function2>/addZoneSlave</function2>
+			<channel>1</channel>
+		</packet>
+		<packet id="SET_ADD_ZONE_SLAVE_SERIAL">
+			<direction>fromCentral</direction>
+			<function1>zone</function1>
+			<function2>/addZoneSlave</function2>
+			<channel>1</channel>
+		</packet>
+		<packet id="SET_REMOVE_ZONE_SLAVE_ID">
+			<direction>fromCentral</direction>
+			<function1>zone</function1>
+			<function2>/removeZoneSlave</function2>
+			<channel>1</channel>
+		</packet>
+		<packet id="SET_REMOVE_ZONE_SLAVE_SERIAL">
+			<direction>fromCentral</direction>
+			<function1>zone</function1>
+			<function2>/removeZoneSlave</function2>
+			<channel>1</channel>
+		</packet>
+		<packet id="SET_BASS">
+			<direction>fromCentral</direction>
+			<function1>bass</function1>
+			<function2>/bass</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>bass</key>
+					<parameterId>BASS:TARGET_BASS</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="SET_NAME">
+			<direction>fromCentral</direction>
+			<function1>name</function1>
+			<function2>/name</function2>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>name</key>
+					<parameterId>DEVICE-INFO:NAME</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_NAME">
+			<direction>toCentral</direction>
+			<function1>name</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>nameUpdated</key>
+					<parameterId>DEVICE-INFO:NAME</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_INFO">
+			<direction>toCentral</direction>
+			<function1>info</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>name</key>
+					<parameterId>DEVICE-INFO:NAME</parameterId>
+				</element>
+				<element>
+					<key>type</key>
+					<parameterId>DEVICE-INFO:TYPE</parameterId>
+				</element>
+				<element>
+					<key>softwareVersion1</key>
+					<parameterId>DEVICE-INFO:SOFTWARE_VERSION_1</parameterId>
+				</element>
+				<element>
+					<key>serialNumber1</key>
+					<parameterId>DEVICE-INFO:SERIAL_NUMBER_1</parameterId>
+				</element>
+				<element>
+					<key>softwareVersion2</key>
+					<parameterId>DEVICE-INFO:SOFTWARE_VERSION_2</parameterId>
+				</element>
+				<element>
+					<key>serialNumber2</key>
+					<parameterId>DEVICE-INFO:SERIAL_NUMBER_2</parameterId>
+				</element>
+				<element>
+					<key>macAddress1</key>
+					<parameterId>DEVICE-INFO:MAC_ADDRESS_1</parameterId>
+				</element>
+				<element>
+					<key>ipAddress1</key>
+					<parameterId>DEVICE-INFO:IP_ADDRESS_1</parameterId>
+				</element>
+				<element>
+					<key>macAddress2</key>
+					<parameterId>DEVICE-INFO:MAC_ADDRESS_2</parameterId>
+				</element>
+				<element>
+					<key>ipAddress2</key>
+					<parameterId>DEVICE-INFO:IP_ADDRESS_2</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_NOW_PLAYING">
+			<direction>toCentral</direction>
+			<function1>nowPlaying</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source</key>
+					<parameterId>NOW-PLAYING:SOURCE</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount</key>
+					<parameterId>NOW-PLAYING:SOURCE_ACCOUNT</parameterId>
+				</element>
+				<element>
+					<key>track</key>
+					<parameterId>NOW-PLAYING:SOURCE_TRACK</parameterId>
+				</element>
+				<element>
+					<key>artist</key>
+					<parameterId>NOW-PLAYING:ARTIST</parameterId>
+				</element>
+				<element>
+					<key>album</key>
+					<parameterId>NOW-PLAYING:ALBUM</parameterId>
+				</element>
+				<element>
+					<key>genre</key>
+					<parameterId>NOW-PLAYING:GENRE</parameterId>
+				</element>
+				<element>
+					<key>rating</key>
+					<parameterId>NOW-PLAYING:RATING</parameterId>
+				</element>
+				<element>
+					<key>stationName</key>
+					<parameterId>NOW-PLAYING:STATION_NAME</parameterId>
+				</element>
+				<element>
+					<key>skipEnabled</key>
+					<parameterId>NOW-PLAYING:SKIP_ENABLED</parameterId>
+				</element>
+				<element>
+					<key>skipPreviousEnabled</key>
+					<parameterId>NOW-PLAYING:SKIP_PREVIOUS_ENABLED</parameterId>
+				</element>
+				<element>
+					<key>favoriteEnabled</key>
+					<parameterId>NOW-PLAYING:FAVORITE_ENABLED</parameterId>
+				</element>
+				<element>
+					<key>isFavorite</key>
+					<parameterId>NOW-PLAYING:IS_FAVORITE</parameterId>
+				</element>
+				<element>
+					<key>rateEnabled</key>
+					<parameterId>NOW-PLAYING:RATE_ENABLED</parameterId>
+				</element>
+				<element>
+					<key>rating</key>
+					<parameterId>NOW-PLAYING:RATING</parameterId>
+				</element>
+				<element>
+					<key>playStatus</key>
+					<parameterId>NOW-PLAYING:PLAY_STATUS</parameterId>
+				</element>
+				<element>
+					<key>shuffleSetting</key>
+					<parameterId>NOW-PLAYING:SHUFFLE_SETTING</parameterId>
+				</element>
+				<element>
+					<key>repeatSettings</key>
+					<parameterId>NOW-PLAYING:REPEAT_SETTINGS</parameterId>
+				</element>
+				<element>
+					<key>streamType</key>
+					<parameterId>NOW-PLAYING:STREAM_TYPE</parameterId>
+				</element>
+				<element>
+					<key>stationLocation</key>
+					<parameterId>NOW-PLAYING:STATION_LOCATION</parameterId>
+				</element>
+				<element>
+					<key>artImageStatus</key>
+					<parameterId>NOW-PLAYING:ART_IMAGE_STATUS</parameterId>
+				</element>
+				<element>
+					<key>art</key>
+					<parameterId>NOW-PLAYING:ART_URL</parameterId>
+				</element>
+				<element>
+					<key>total</key>
+					<parameterId>NOW-PLAYING:TIME_PLAYED</parameterId>
+				</element>
+				<element>
+					<key>time</key>
+					<parameterId>NOW-PLAYING:TIME_TOTAL</parameterId>
+				</element>
+				<element>
+					<key>status</key>
+					<parameterId>NOW-PLAYING:STATUS</parameterId>
+				</element>
+				<element>
+					<key>deviceName</key>
+					<parameterId>NOW-PLAYING:DEVICE_NAME</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_VOLUME">
+			<direction>toCentral</direction>
+			<function1>volume</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>targetvolume</key>
+					<parameterId>VOLUME:TARGET_VOLUME</parameterId>
+				</element>
+				<element>
+					<key>actualvolume</key>
+					<parameterId>VOLUME:ACTUAL_VOLUME</parameterId>
+				</element>
+				<element>
+					<key>muteenabled</key>
+					<parameterId>VOLUME:MUTE_ENABLED</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_SOURCES">
+			<direction>toCentral</direction>
+			<function1>sources</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>source1</key>
+					<parameterId>SOURCE-ITEM:SOURCE1</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount1</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT1</parameterId>
+				</element>
+				<element>
+					<key>status1</key>
+					<parameterId>SOURCE-ITEM:STATUS1</parameterId>
+				</element>
+				<element>
+					<key>isLocal1</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL1</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed1</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED1</parameterId>
+				</element>
+				<element>
+					<key>name1</key>
+					<parameterId>SOURCE-ITEM:NAME1</parameterId>
+				</element>
+				<element>
+					<key>source2</key>
+					<parameterId>SOURCE-ITEM:SOURCE2</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount2</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT2</parameterId>
+				</element>
+				<element>
+					<key>status2</key>
+					<parameterId>SOURCE-ITEM:STATUS2</parameterId>
+				</element>
+				<element>
+					<key>isLocal2</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL2</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed2</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED2</parameterId>
+				</element>
+				<element>
+					<key>name2</key>
+					<parameterId>SOURCE-ITEM:NAME2</parameterId>
+				</element>
+				<element>
+					<key>source3</key>
+					<parameterId>SOURCE-ITEM:SOURCE3</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount3</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT3</parameterId>
+				</element>
+				<element>
+					<key>status3</key>
+					<parameterId>SOURCE-ITEM:STATUS3</parameterId>
+				</element>
+				<element>
+					<key>isLocal3</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL3</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed3</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED3</parameterId>
+				</element>
+				<element>
+					<key>name3</key>
+					<parameterId>SOURCE-ITEM:NAME3</parameterId>
+				</element>
+				<element>
+					<key>source4</key>
+					<parameterId>SOURCE-ITEM:SOURCE4</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount4</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT4</parameterId>
+				</element>
+				<element>
+					<key>status4</key>
+					<parameterId>SOURCE-ITEM:STATUS4</parameterId>
+				</element>
+				<element>
+					<key>isLocal4</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL4</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed4</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED4</parameterId>
+				</element>
+				<element>
+					<key>name4</key>
+					<parameterId>SOURCE-ITEM:NAME4</parameterId>
+				</element>
+				<element>
+					<key>source5</key>
+					<parameterId>SOURCE-ITEM:SOURCE5</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount5</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT5</parameterId>
+				</element>
+				<element>
+					<key>status5</key>
+					<parameterId>SOURCE-ITEM:STATUS5</parameterId>
+				</element>
+				<element>
+					<key>isLocal5</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL5</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed5</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED5</parameterId>
+				</element>
+				<element>
+					<key>name5</key>
+					<parameterId>SOURCE-ITEM:NAME5</parameterId>
+				</element>
+				<element>
+					<key>source6</key>
+					<parameterId>SOURCE-ITEM:SOURCE6</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount6</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT6</parameterId>
+				</element>
+				<element>
+					<key>status6</key>
+					<parameterId>SOURCE-ITEM:STATUS6</parameterId>
+				</element>
+				<element>
+					<key>isLocal6</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL6</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed6</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED6</parameterId>
+				</element>
+				<element>
+					<key>name6</key>
+					<parameterId>SOURCE-ITEM:NAME6</parameterId>
+				</element>
+				<element>
+					<key>source7</key>
+					<parameterId>SOURCE-ITEM:SOURCE7</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount7</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT7</parameterId>
+				</element>
+				<element>
+					<key>status7</key>
+					<parameterId>SOURCE-ITEM:STATUS7</parameterId>
+				</element>
+				<element>
+					<key>isLocal7</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL7</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed7</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED7</parameterId>
+				</element>
+				<element>
+					<key>name7</key>
+					<parameterId>SOURCE-ITEM:NAME7</parameterId>
+				</element>
+				<element>
+					<key>source8</key>
+					<parameterId>SOURCE-ITEM:SOURCE8</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount8</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT8</parameterId>
+				</element>
+				<element>
+					<key>status8</key>
+					<parameterId>SOURCE-ITEM:STATUS8</parameterId>
+				</element>
+				<element>
+					<key>isLocal8</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL8</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed8</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED8</parameterId>
+				</element>
+				<element>
+					<key>name8</key>
+					<parameterId>SOURCE-ITEM:NAME8</parameterId>
+				</element>
+				<element>
+					<key>source9</key>
+					<parameterId>SOURCE-ITEM:SOURCE9</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount9</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT9</parameterId>
+				</element>
+				<element>
+					<key>status9</key>
+					<parameterId>SOURCE-ITEM:STATUS9</parameterId>
+				</element>
+				<element>
+					<key>isLocal9</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL9</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed9</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED9</parameterId>
+				</element>
+				<element>
+					<key>name9</key>
+					<parameterId>SOURCE-ITEM:NAME9</parameterId>
+				</element>
+				<element>
+					<key>source10</key>
+					<parameterId>SOURCE-ITEM:SOURCE10</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount10</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT10</parameterId>
+				</element>
+				<element>
+					<key>status10</key>
+					<parameterId>SOURCE-ITEM:STATUS10</parameterId>
+				</element>
+				<element>
+					<key>isLocal10</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL10</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed10</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED10</parameterId>
+				</element>
+				<element>
+					<key>name10</key>
+					<parameterId>SOURCE-ITEM:NAME10</parameterId>
+				</element>
+				<element>
+					<key>source11</key>
+					<parameterId>SOURCE-ITEM:SOURCE11</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount11</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT11</parameterId>
+				</element>
+				<element>
+					<key>status11</key>
+					<parameterId>SOURCE-ITEM:STATUS11</parameterId>
+				</element>
+				<element>
+					<key>isLocal11</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL11</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed11</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED11</parameterId>
+				</element>
+				<element>
+					<key>name11</key>
+					<parameterId>SOURCE-ITEM:NAME11</parameterId>
+				</element>
+				<element>
+					<key>source12</key>
+					<parameterId>SOURCE-ITEM:SOURCE12</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount12</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT12</parameterId>
+				</element>
+				<element>
+					<key>status12</key>
+					<parameterId>SOURCE-ITEM:STATUS12</parameterId>
+				</element>
+				<element>
+					<key>isLocal12</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL12</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed12</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED12</parameterId>
+				</element>
+				<element>
+					<key>name12</key>
+					<parameterId>SOURCE-ITEM:NAME12</parameterId>
+				</element>
+				<element>
+					<key>source13</key>
+					<parameterId>SOURCE-ITEM:SOURCE13</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount13</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT13</parameterId>
+				</element>
+				<element>
+					<key>status13</key>
+					<parameterId>SOURCE-ITEM:STATUS13</parameterId>
+				</element>
+				<element>
+					<key>isLocal13</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL13</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed13</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED13</parameterId>
+				</element>
+				<element>
+					<key>name13</key>
+					<parameterId>SOURCE-ITEM:NAME13</parameterId>
+				</element>
+				<element>
+					<key>source14</key>
+					<parameterId>SOURCE-ITEM:SOURCE14</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount14</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT14</parameterId>
+				</element>
+				<element>
+					<key>status14</key>
+					<parameterId>SOURCE-ITEM:STATUS14</parameterId>
+				</element>
+				<element>
+					<key>isLocal14</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL14</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed14</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED14</parameterId>
+				</element>
+				<element>
+					<key>name14</key>
+					<parameterId>SOURCE-ITEM:NAME14</parameterId>
+				</element>
+				<element>
+					<key>source15</key>
+					<parameterId>SOURCE-ITEM:SOURCE15</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount15</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT15</parameterId>
+				</element>
+				<element>
+					<key>status15</key>
+					<parameterId>SOURCE-ITEM:STATUS15</parameterId>
+				</element>
+				<element>
+					<key>isLocal15</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL15</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed15</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED15</parameterId>
+				</element>
+				<element>
+					<key>name15</key>
+					<parameterId>SOURCE-ITEM:NAME15</parameterId>
+				</element>
+				<element>
+					<key>source16</key>
+					<parameterId>SOURCE-ITEM:SOURCE16</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount16</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT16</parameterId>
+				</element>
+				<element>
+					<key>status16</key>
+					<parameterId>SOURCE-ITEM:STATUS16</parameterId>
+				</element>
+				<element>
+					<key>isLocal16</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL16</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed16</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED16</parameterId>
+				</element>
+				<element>
+					<key>name16</key>
+					<parameterId>SOURCE-ITEM:NAME16</parameterId>
+				</element>
+				<element>
+					<key>source177</key>
+					<parameterId>SOURCE-ITEM:SOURCE17</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount17</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT17</parameterId>
+				</element>
+				<element>
+					<key>status17</key>
+					<parameterId>SOURCE-ITEM:STATUS17</parameterId>
+				</element>
+				<element>
+					<key>isLocal17</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL17</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed17</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED17</parameterId>
+				</element>
+				<element>
+					<key>name17</key>
+					<parameterId>SOURCE-ITEM:NAME17</parameterId>
+				</element>
+				<element>
+					<key>source18</key>
+					<parameterId>SOURCE-ITEM:SOURCE18</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount18</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT18</parameterId>
+				</element>
+				<element>
+					<key>status18</key>
+					<parameterId>SOURCE-ITEM:STATUS18</parameterId>
+				</element>
+				<element>
+					<key>isLocal18</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL18</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed18</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED18</parameterId>
+				</element>
+				<element>
+					<key>name18</key>
+					<parameterId>SOURCE-ITEM:NAME18</parameterId>
+				</element>
+				<element>
+					<key>source19</key>
+					<parameterId>SOURCE-ITEM:SOURCE19</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount19</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT19</parameterId>
+				</element>
+				<element>
+					<key>status19</key>
+					<parameterId>SOURCE-ITEM:STATUS19</parameterId>
+				</element>
+				<element>
+					<key>isLocal19</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL19</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed19</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED19</parameterId>
+				</element>
+				<element>
+					<key>name19</key>
+					<parameterId>SOURCE-ITEM:NAME19</parameterId>
+				</element>
+				<element>
+					<key>source20</key>
+					<parameterId>SOURCE-ITEM:SOURCE20</parameterId>
+				</element>
+				<element>
+					<key>sourceAccount20</key>
+					<parameterId>SOURCE-ITEM:SOURCE_ACCOUNT20</parameterId>
+				</element>
+				<element>
+					<key>status20</key>
+					<parameterId>SOURCE-ITEM:STATUS20</parameterId>
+				</element>
+				<element>
+					<key>isLocal20</key>
+					<parameterId>SOURCE-ITEM:IS_LOCAL20</parameterId>
+				</element>
+				<element>
+					<key>multiroomallowed20</key>
+					<parameterId>SOURCE-ITEM:MULTIROOM_ALLOWED20</parameterId>
+				</element>
+				<element>
+					<key>name20</key>
+					<parameterId>SOURCE-ITEM:NAME20</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_ZONE">
+			<direction>toCentral</direction>
+			<function1>zone</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>maser</key>
+					<parameterId>ZONE_MEMBER:MASTER</parameterId>
+				</element>
+				<element>
+					<key>member1mac</key>
+					<parameterId>ZONE_MEMBER:MAC1</parameterId>
+				</element>
+				<element>
+					<key>member1ipaddress</key>
+					<parameterId>ZONE_MEMBER:IPADDRESS1</parameterId>
+				</element>
+				<element>
+					<key>member1mac</key>
+					<parameterId>ZONE_MEMBER:MAC2</parameterId>
+				</element>
+				<element>
+					<key>member1ipaddress</key>
+					<parameterId>ZONE_MEMBER:IPADDRESS2</parameterId>
+				</element>
+				<element>
+					<key>member1mac</key>
+					<parameterId>ZONE_MEMBER:MAC3</parameterId>
+				</element>
+				<element>
+					<key>member1ipaddress</key>
+					<parameterId>ZONE_MEMBER:IPADDRESS3</parameterId>
+				</element>
+				<element>
+					<key>member1mac</key>
+					<parameterId>ZONE_MEMBER:MAC4</parameterId>
+				</element>
+				<element>
+					<key>member1ipaddress</key>
+					<parameterId>ZONE_MEMBER:IPADDRESS4</parameterId>
+				</element>
+				<element>
+					<key>member1mac</key>
+					<parameterId>ZONE_MEMBER:MAC5</parameterId>
+				</element>
+				<element>
+					<key>member1ipaddress</key>
+					<parameterId>ZONE_MEMBER:IPADDRESS5</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_BASS_CAPABILITIES">
+			<direction>toCentral</direction>
+			<function1>bassCapabilities</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>bassAvailable</key>
+					<parameterId>BASS-CAPABILITIES:BASS_AVAILABLE</parameterId>
+				</element>
+				<element>
+					<key>bassMin</key>
+					<parameterId>BASS-CAPABILITIES:BASS_MIN</parameterId>
+				</element>
+				<element>
+					<key>bassMax</key>
+					<parameterId>BASS-CAPABILITIES:BASS_MAX</parameterId>
+				</element>
+				<element>
+					<key>bassDefault</key>
+					<parameterId>BASS-CAPABILITIES:BASS_DEFAULT</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_BASS">
+			<direction>toCentral</direction>
+			<function1>bass</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>targetbass</key>
+					<parameterId>BASS:TARGET_BASS</parameterId>
+				</element>
+				<element>
+					<key>actualbass</key>
+					<parameterId>BASS:ACTUAL_BASS</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_PRESETS">
+			<direction>toCentral</direction>
+			<function1>presets</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>preset1createdOn</key>
+					<parameterId>PRESETS:PRESET1_CREATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset1updatedOn</key>
+					<parameterId>PRESETS:PRESET1_UPDATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset1source</key>
+					<parameterId>PRESETS:PRESET1_SOURCE</parameterId>
+				</element>
+				<element>
+					<key>preset1type</key>
+					<parameterId>PRESETS:PRESET1_TYPE</parameterId>
+				</element>
+				<element>
+					<key>preset1location</key>
+					<parameterId>PRESETS:PRESET1_LOCATION</parameterId>
+				</element>
+				<element>
+					<key>preset1sourceAccount</key>
+					<parameterId>PRESETS:PRESET1_SOURCE_ACCOUNT</parameterId>
+				</element>
+				<element>
+					<key>preset1isPresetable</key>
+					<parameterId>PRESETS:PRESET1_IS_PRESETABLE</parameterId>
+				</element>
+				<element>
+					<key>preset1itemName</key>
+					<parameterId>PRESETS:PRESET1_ITEM_NAME</parameterId>
+				</element>
+				<element>
+					<key>preset1containerArt</key>
+					<parameterId>PRESETS:PRESET1_CONTAINER_ART</parameterId>
+				</element>
+				<element>
+					<key>preset2createdOn</key>
+					<parameterId>PRESETS:PRESET2_CREATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset2updatedOn</key>
+					<parameterId>PRESETS:PRESET2_UPDATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset2source</key>
+					<parameterId>PRESETS:PRESET2_SOURCE</parameterId>
+				</element>
+				<element>
+					<key>preset2type</key>
+					<parameterId>PRESETS:PRESET2_TYPE</parameterId>
+				</element>
+				<element>
+					<key>preset2location</key>
+					<parameterId>PRESETS:PRESET2_LOCATION</parameterId>
+				</element>
+				<element>
+					<key>preset2sourceAccount</key>
+					<parameterId>PRESETS:PRESET2_SOURCE_ACCOUNT</parameterId>
+				</element>
+				<element>
+					<key>preset2isPresetable</key>
+					<parameterId>PRESETS:PRESET2_IS_PRESETABLE</parameterId>
+				</element>
+				<element>
+					<key>preset2itemName</key>
+					<parameterId>PRESETS:PRESET2_ITEM_NAME</parameterId>
+				</element>
+				<element>
+					<key>preset2containerArt</key>
+					<parameterId>PRESETS:PRESET2_CONTAINER_ART</parameterId>
+				</element>
+				<element>
+					<key>preset3createdOn</key>
+					<parameterId>PRESETS:PRESET3_CREATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset3updatedOn</key>
+					<parameterId>PRESETS:PRESET3_UPDATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset3source</key>
+					<parameterId>PRESETS:PRESET3_SOURCE</parameterId>
+				</element>
+				<element>
+					<key>preset3type</key>
+					<parameterId>PRESETS:PRESET3_TYPE</parameterId>
+				</element>
+				<element>
+					<key>preset3location</key>
+					<parameterId>PRESETS:PRESET3_LOCATION</parameterId>
+				</element>
+				<element>
+					<key>preset3sourceAccount</key>
+					<parameterId>PRESETS:PRESET3_SOURCE_ACCOUNT</parameterId>
+				</element>
+				<element>
+					<key>preset3isPresetable</key>
+					<parameterId>PRESETS:PRESET3_IS_PRESETABLE</parameterId>
+				</element>
+				<element>
+					<key>preset3itemName</key>
+					<parameterId>PRESETS:PRESET3_ITEM_NAME</parameterId>
+				</element>
+				<element>
+					<key>preset3containerArt</key>
+					<parameterId>PRESETS:PRESET3_CONTAINER_ART</parameterId>
+				</element>
+				<element>
+					<key>preset4createdOn</key>
+					<parameterId>PRESETS:PRESET4_CREATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset4updatedOn</key>
+					<parameterId>PRESETS:PRESET4_UPDATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset4source</key>
+					<parameterId>PRESETS:PRESET4_SOURCE</parameterId>
+				</element>
+				<element>
+					<key>preset4type</key>
+					<parameterId>PRESETS:PRESET4_TYPE</parameterId>
+				</element>
+				<element>
+					<key>preset4location</key>
+					<parameterId>PRESETS:PRESET4_LOCATION</parameterId>
+				</element>
+				<element>
+					<key>preset4sourceAccount</key>
+					<parameterId>PRESETS:PRESET4_SOURCE_ACCOUNT</parameterId>
+				</element>
+				<element>
+					<key>preset4isPresetable</key>
+					<parameterId>PRESETS:PRESET4_IS_PRESETABLE</parameterId>
+				</element>
+				<element>
+					<key>preset4itemName</key>
+					<parameterId>PRESETS:PRESET4_ITEM_NAME</parameterId>
+				</element>
+				<element>
+					<key>preset4containerArt</key>
+					<parameterId>PRESETS:PRESET4_CONTAINER_ART</parameterId>
+				</element>
+				<element>
+					<key>preset5createdOn</key>
+					<parameterId>PRESETS:PRESET5_CREATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset5updatedOn</key>
+					<parameterId>PRESETS:PRESET5_UPDATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset5source</key>
+					<parameterId>PRESETS:PRESET5_SOURCE</parameterId>
+				</element>
+				<element>
+					<key>preset5type</key>
+					<parameterId>PRESETS:PRESET5_TYPE</parameterId>
+				</element>
+				<element>
+					<key>preset5location</key>
+					<parameterId>PRESETS:PRESET5_LOCATION</parameterId>
+				</element>
+				<element>
+					<key>preset5sourceAccount</key>
+					<parameterId>PRESETS:PRESET5_SOURCE_ACCOUNT</parameterId>
+				</element>
+				<element>
+					<key>preset5isPresetable</key>
+					<parameterId>PRESETS:PRESET5_IS_PRESETABLE</parameterId>
+				</element>
+				<element>
+					<key>preset5itemName</key>
+					<parameterId>PRESETS:PRESET5_ITEM_NAME</parameterId>
+				</element>
+				<element>
+					<key>preset5containerArt</key>
+					<parameterId>PRESETS:PRESET5_CONTAINER_ART</parameterId>
+				</element>
+				<element>
+					<key>preset6createdOn</key>
+					<parameterId>PRESETS:PRESET6_CREATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset6updatedOn</key>
+					<parameterId>PRESETS:PRESET6_UPDATED_ON</parameterId>
+				</element>
+				<element>
+					<key>preset6source</key>
+					<parameterId>PRESETS:PRESET6_SOURCE</parameterId>
+				</element>
+				<element>
+					<key>preset6type</key>
+					<parameterId>PRESETS:PRESET6_TYPE</parameterId>
+				</element>
+				<element>
+					<key>preset6location</key>
+					<parameterId>PRESETS:PRESET6_LOCATION</parameterId>
+				</element>
+				<element>
+					<key>preset6sourceAccount</key>
+					<parameterId>PRESETS:PRESET6_SOURCE_ACCOUNT</parameterId>
+				</element>
+				<element>
+					<key>preset6isPresetable</key>
+					<parameterId>PRESETS:PRESET6_IS_PRESETABLE</parameterId>
+				</element>
+				<element>
+					<key>preset6itemName</key>
+					<parameterId>PRESETS:PRESET6_ITEM_NAME</parameterId>
+				</element>
+				<element>
+					<key>preset6containerArt</key>
+					<parameterId>PRESETS:PRESET6_CONTAINER_ART</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_GROUP">
+			<direction>toCentral</direction>
+			<function1>group</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>groupId</key>
+					<parameterId>GROUP:ID</parameterId>
+				</element>
+				<element>
+					<key>name</key>
+					<parameterId>GROUP:NAME</parameterId>
+				</element>
+				<element>
+					<key>masterDeviceId</key>
+					<parameterId>GROUP:MASTER_DEVICE_ID</parameterId>
+				</element>
+				<element>
+					<key>status</key>
+					<parameterId>GROUP:STATUS</parameterId>
+				</element>
+				<element>
+					<key>groupRole1deviceId</key>
+					<parameterId>GROUP:ROLE1_DEVICE_ID</parameterId>
+				</element>
+				<element>
+					<key>groupRole1role</key>
+					<parameterId>GROUP:ROLE1_ROLE</parameterId>
+				</element>
+				<element>
+					<key>groupRole1ipAddress</key>
+					<parameterId>GROUP:ROLE1_IP_ADDRESS</parameterId>
+				</element>
+				<element>
+					<key>groupRole2deviceId</key>
+					<parameterId>GROUP:ROLE2_DEVICE_ID</parameterId>
+				</element>
+				<element>
+					<key>groupRole2role</key>
+					<parameterId>GROUP:ROLE2_ROLE</parameterId>
+				</element>
+				<element>
+					<key>groupRole2ipAddress</key>
+					<parameterId>GROUP:ROLE2_IP_ADDRESS</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+		<packet id="GET_ERROR">
+			<direction>toCentral</direction>
+			<function1>error</function1>
+			<channel>1</channel>
+			<jsonPayload>
+				<element>
+					<key>error</key>
+					<parameterId>ERROR:ERROR</parameterId>
+				</element>
+				<element>
+					<key>value</key>
+					<parameterId>ERROR:VALUE</parameterId>
+				</element>
+				<element>
+					<key>name</key>
+					<parameterId>ERROR:NAME</parameterId>
+				</element>
+				<element>
+					<key>severity</key>
+					<parameterId>ERROR:SEVERITY</parameterId>
+				</element>
+			</jsonPayload>
+		</packet>
+	</packets>
+	<parameterGroups>
+		<configParameters id="speaker_config"/>
+		<configParameters id="maint_ch_master"/>
+		<variables id="maint_ch_values">
+			<parameter id="UNREACH">
+				<properties>
+					<writeable>false</writeable>
+					<service>true</service>
+				</properties>
+				<logicalBoolean/>
+				<physicalInteger groupId="UNREACH">
+					<operationType>internal</operationType>
+				</physicalInteger>
+			</parameter>
+			<parameter id="STICKY_UNREACH">
+				<properties>
+					<service>true</service>
+					<sticky>true</sticky>
+				</properties>
+				<logicalBoolean/>
+				<physicalInteger groupId="STICKY_UNREACH">
+					<operationType>internal</operationType>
+				</physicalInteger>
+			</parameter>
+			<parameter id="CONFIG_PENDING">
+				<properties>
+					<writeable>false</writeable>
+					<service>true</service>
+				</properties>
+				<logicalBoolean/>
+				<physicalInteger groupId="CONFIG_PENDING">
+					<operationType>internal</operationType>
+				</physicalInteger>
+			</parameter>
+			<parameter id="RSSI_DEVICE">
+				<properties>
+					<writeable>false</writeable>
+				</properties>
+				<logicalInteger/>
+				<physicalInteger groupId="RSSI_DEVICE">
+					<operationType>internal</operationType>
+				</physicalInteger>
+			</parameter>
+			<parameter id="RSSI_PEER">
+				<properties>
+					<writeable>false</writeable>
+				</properties>
+				<logicalInteger/>
+				<physicalInteger groupId="RSSI_PEER">
+					<operationType>internal</operationType>
+				</physicalInteger>
+			</parameter>
+		</variables>
+		<variables id="speaker_valueset">
+			<parameter id="PLAY_INFO:APP_KEY">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+				<physicalString groupId="PLAY_INFO:APP_KEY">
+					<operationType>store</operationType>
+				</physicalString>
+			</parameter>
+			<parameter id="PLAY_INFO:URL">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+				<physicalString groupId="PLAY_INFO:URL">
+					<operationType>store</operationType>
+				</physicalString>
+			</parameter>
+			<parameter id="PLAY_INFO:SERVICE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+				<physicalString groupId="PLAY_INFO:SERVICE">
+					<operationType>store</operationType>
+				</physicalString>
+			</parameter>
+			<parameter id="PLAY_INFO:REASON">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+				<physicalString groupId="PLAY_INFO:REASON">
+					<operationType>store</operationType>
+				</physicalString>
+			</parameter>
+			<parameter id="PLAY_INFO:MESSAGE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+				<physicalString groupId="PLAY_INFO:MESSAGE">
+					<operationType>store</operationType>
+				</physicalString>
+			</parameter>
+			<parameter id="PLAY_INFO:VOLUME">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue>10</defaultValue>
+					<maximumValue>10</maximumValue>
+					<maximumValue>70</maximumValue>
+				</logicalInteger>
+				<physicalInteger groupId="PLAY_INFO:VOLUME">
+					<operationType>store</operationType>
+				</physicalInteger>
+			</parameter>
+			<parameter id="PLAY_INFO:PLAY">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="PLAY_INFO:PLAY">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SPEAKER">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PLAY_TTS">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+				<physicalString groupId="PLAY_TTS">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="SET_TTS">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PLAY_TTS_LANGUAGE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue>en-US</defaultValue>
+				</logicalString>
+				<physicalNone>
+					<operationType>store</operationType>
+				</physicalNone>
+			</parameter>
+			<parameter id="PLAY_TTS_VOICE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue>Justin</defaultValue>
+				</logicalString>
+				<physicalNone>
+					<operationType>store</operationType>
+				</physicalNone>
+			</parameter>
+			<parameter id="KEY:PLAY">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PLAY">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PLAY">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PAUSE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PAUSE">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PAUSE">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PLAY_PAUSE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PLAY_PAUSE">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PLAY_PAUSE">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PREV_TRACK">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PREV_TRACK">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PREV_TRACK">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:NEXT_TRACK">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:NEXT_TRACK">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_NEXT_TRACK">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:MUTE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:MUTE">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_MUTE">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:SHUFFLE_ON">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:SUFFLE_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_SHUFFLE_ON">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:SHUFFLE_OFF">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:SHUFFLE_OFF">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_SHUFFLE_OFF">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:REPEAT_ON">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:REPEAT_ONE">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_REPEAT_ONE">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:REPEAT_ALL">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:REPEAT_ALL">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_REPEAT_ALL">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:REPEAT_OFF">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:REPEAT_OFF">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_REPEAT_OFF">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:ADD_FAVORITE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:ADD_FAVORITE">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_ADD_FAVORITE">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:REMOVE_FAVORITE">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:REMOVE_FAVORITE">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_REMOVE_FAVORITE">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:THUMBS_UP">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:THUMBS_UP">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_THUMBS_UP">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:THUMBS_DOWN">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:THUMBS_DOWN">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_THUMBS_DOWN">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:BOOKMARK">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:BOOKMARK">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_BOOKMARK">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PRESET1">
+				<properties>
+					<casts>
+						<booleanString>
+							<trueValue>press</trueValue>
+							<falseValue>release</falseValue>
+						</booleanString>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PRESET1">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PRESET1">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PRESET2">
+				<properties>
+					<casts>
+						<booleanString>
+							<trueValue>press</trueValue>
+							<falseValue>release</falseValue>
+						</booleanString>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PRESET2">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PRESET2">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PRESET3">
+				<properties>
+					<casts>
+						<booleanString>
+							<trueValue>press</trueValue>
+							<falseValue>release</falseValue>
+						</booleanString>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PRESET3">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PRESET3">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PRESET4">
+				<properties>
+					<casts>
+						<booleanString>
+							<trueValue>press</trueValue>
+							<falseValue>release</falseValue>
+						</booleanString>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PRESET4">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PRESET4">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PRESET5">
+				<properties>
+					<casts>
+						<booleanString>
+							<trueValue>press</trueValue>
+							<falseValue>release</falseValue>
+						</booleanString>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PRESET5">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PRESET5">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:PRESET6">
+				<properties>
+					<casts>
+						<booleanString>
+							<trueValue>press</trueValue>
+							<falseValue>release</falseValue>
+						</booleanString>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:PRESET6">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_PRESET6">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="KEY:POWER">
+				<properties>
+					<casts>
+						<booleanString>
+							<trueValue>press</trueValue>
+							<falseValue>release</falseValue>
+						</booleanString>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="KEY:POWER">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_KEY_POWER">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:NAME">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+					<packet id="GET_NAME">
+						<type>event</type>
+					</packet>
+					<packet id="SET_NAME">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:TYPE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:TYPE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:SOFTWARE_VERSION_1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:SOFTWARE_VERSION_1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:SERIAL_NUMBER_1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:SERIAL_NUMBER_1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:SOFTWARE_VERSION_2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:SOFTWARE_VERSION_2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:SERIAL_NUMBER_2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:SERIAL_NUMBER_2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:MAC_ADDRESS_1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:MAC_ADDRESS_1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:IP_ADDRESS_1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:IP_ADDRESS_1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:MAC_ADDRESS_2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:MAC_ADDRESS_2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="DEVICE-INFO:IP_ADDRESS_2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="DEVICE-INFO:IP_ADDRESS_2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_INFO">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:SOURCE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:SOURCE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:SOURCE_ACCOUNT">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:SOURCE_ACCOUNT">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:TRACK">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:TRACK">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:ARTIST">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:ARTIST">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:ALBUM">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:ALBUM">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:GENRE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:GENRE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:RATING">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:RATING">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:STATION_NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:STATION_NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:SKIP_ENABLED">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="NOW-PLAYING:SKIP_ENABLED">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:SKIP_PREVIOUS_ENABLED">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="NOW-PLAYING:SKIP_PREVIOUS_ENABLED">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:FAVORITE_ENABLED">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="NOW-PLAYING:FAVORITE_ENABLED">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:IS_FAVORITE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="NOW-PLAYING:IS_FAVORITE">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:RATE_ENABLED">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="NOW-PLAYING:RATE_ENABLED">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:RATING">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:RATING">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:PLAY_STATUS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:PLAY_STATUS">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:SHUFFLE_SETTING">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:SHUFFLE_SETTING">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:REPEAT_SETTINGS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:REPEAT_SETTINGS">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:STREAM_TYPE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:STREAM_TYPE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:STATION_LOCATION">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:STATION_LOCATION">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:ART_IMAGE_STATUS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:ART_IMAGE_STATUS">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:ART_URL">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:ART_URL">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:TIME_PLAYED">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="NOW-PLAYING:TIME_PLAYED">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:TIME_TOTAL">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="NOW-PLAYING:TIME_TOTAL">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:STATUS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:STATUS">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="NOW-PLAYING:DEVICE_NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="NOW-PLAYING:DEVICE_NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_NOW_PLAYING">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="VOLUME:TARGET_VOLUME">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="VOLUME:TARGET_VOLUME">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_VOLUME">
+						<type>event</type>
+					</packet>
+					<packet id="SET_VOLUME">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="VOLUME:ACTUAL_VOLUME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="VOLUME:ACTUAL_VOLUME">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_VOLUME">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="VOLUME:MUTE_ENABLED">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="VOLUME:MUTE_ENABLED">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_VOLUME">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL1">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED1">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM1">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM1">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE1">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL2">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED2">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM2">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM2">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE2">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE3">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE3">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT3">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT3">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS3">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS3">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL3">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL3">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED3">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED3">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME3">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME3">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM3">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM3">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE3">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE4">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE4">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT4">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT4">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS4">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS4">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL4">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL4">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED4">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED4">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME4">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME4">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM4">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM4">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE4">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE5">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE5">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT5">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT5">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS5">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS5">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL5">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL5">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED5">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED5">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME5">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME5">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM5">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM5">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE5">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE6">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE6">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT6">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT6">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS6">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS6">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL6">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL6">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED6">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED6">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME6">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME6">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM6">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM6">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE6">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE7">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE7">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT7">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT7">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS7">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS7">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL7">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL7">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED7">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED7">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME7">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME7">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM7">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM7">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE7">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE8">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE8">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT8">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT8">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS8">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS8">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL8">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL8">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED8">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED8">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME8">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME8">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM8">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM8">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE8">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE9">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE9">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT9">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT9">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS9">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS9">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL9">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL9">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED9">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED9">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME9">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME9">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM9">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM9">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE9">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE10">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE10">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT10">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT10">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS10">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS10">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL10">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL10">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED10">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED10">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME10">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME10">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM10">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM10">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE10">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE11">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE11">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT11">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT11">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS111">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS11">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL11">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL11">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED11">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED11">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME11">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME11">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM11">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM11">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE11">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE12">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE12">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT12">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT12">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS12">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS12">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL12">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL12">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED12">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED12">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME12">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME12">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM12">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM12">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE12">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE13">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE13">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT13">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT13">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS13">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS13">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL13">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL13">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED13">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED13">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME13">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME13">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM13">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM13">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE13">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE14">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE14">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT14">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT14">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS14">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS14">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL14">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL14">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED14">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED14">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME14">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME14">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM14">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM14">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE14">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE15">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE15">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT15">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT15">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS15">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS15">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL15">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL15">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED15">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED15">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME15">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME15">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM15">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM15">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE15">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE16">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE16">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT16">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT16">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS16">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS16">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL16">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL16">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED16">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED16">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME16">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME16">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM16">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM16">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE16">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE17">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE17">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT17">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT17">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS17">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS17">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL17">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL17">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED17">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED17">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME17">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME17">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM17">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM17">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE17">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE18">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE18">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT18">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT18">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS18">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS18">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL18">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL18">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED18">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED18">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME18">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME18">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM18">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM18">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE18">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE19">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE19">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT19">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT19">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS19">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS19">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL19">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL19">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED19">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED19">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME19">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME19">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM19">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM19">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE19">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE20">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE20">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SOURCE_ACCOUNT20">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:SOURCE_ACCOUNT20">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:STATUS20">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:STATUS20">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:IS_LOCAL20">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:IS_LOCAL20">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:MULTIROOM_ALLOWED20">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="SOURCE-ITEM:MULTIROOM_ALLOWED20">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:NAME20">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="SOURCE-ITEM:NAME20">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_SOURCES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="SOURCE-ITEM:SET_ITEM20">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalAction/>
+				<physicalInteger groupId="SOURCE-ITEM:SET_ITEM20">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_SOURCE20">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:MASTER">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:MASTER">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:MAC1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:MAC1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:IPADDRESS1">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:IPADDRESS1">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:MAC2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:MAC2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:IPADDRESS2">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:IPADDRESS2">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:MAC3">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:MAC3">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:IPADDRESS3">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:IPADDRESS3">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:MAC4">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:MAC4">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:IPADDRESS4">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:IPADDRESS4">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:MAC5">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:MAC5">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:IPADDRESS5">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:IPADDRESS5">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ZONE">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:SET_ZONE_SLAVE_BY_ID">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="ZONE_MEMBER:SET_ZONE_SLAVE_BY_ID">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_ZONE_SLAVE_ID">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:SET_ZONE_SLAVE_BY_SERIAL">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:SET_ZONE_SLAVE_BY_SERIAL">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="SET_ZONE_SLAVE_SERIAL">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:ADD_SLAVE_BY_ID">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="ZONE_MEMBER:ADD_SLAVE_BY_ID">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_ADD_ZONE_SLAVE_ID">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:ADD_SLAVE_BY_SERIAL">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:ADD_SLAVE_BY_SERIAL">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="SET_ADD_ZONE_SLAVE_SERIAL">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:REMOVE_SLAVE_BY_ID">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="ZONE_MEMBER:REMOVE_SLAVE_BY_ID">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="SET_REMOVE_ZONE_SLAVE_ID">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ZONE_MEMBER:REMOVE_SLAVE_BY_SERIAL">
+				<properties>
+					<readable>false</readable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ZONE_MEMBER:REMOVE_SLAVE_BY_SERIAL">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="SET_REMOVE_ZONE_SLAVE_SERIAL">
+						<type>set</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="BASS-CAPABILITIES:BASS_AVAILABLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="BASS-CAPABILITIES:BASS_AVAILABLE">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_BASS_CAPABILITIES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="BASS-CAPABILITIES:BASS_MIN">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="BASS-CAPABILITIES:BASS_MIN">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_BASS_CAPABILITIES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="BASS-CAPABILITIES:BASS_MAX">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="BASS-CAPABILITIES:BASS_MAX">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_BASS_CAPABILITIES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="BASS-CAPABILITIES:BASS_DEFAULT">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="BASS-CAPABILITIES:BASS_DEFAULT">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_BASS_CAPABILITIES">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="BASS:TARGET_BASS">
+				<properties>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="BASS:TARGET_BASS">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_BASS">
+						<type>event</type>
+					</packet>
+					<packet id="SET_BASS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="BASS:ACTUAL_BASS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="BASS:ACTUAL_BASS">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_BASS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_CREATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET1_CREATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_UPDATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET1_UPDATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_SOURCE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET1_SOURCE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_TYPE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET1_TYPE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_LOCATION">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET1_LOCATION">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_SOURCE_ACCOUNT">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET1_SOURCE_ACCOUNT">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_IS_PRESETABLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="PRESETS:PRESET1_IS_PRESETABLE">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_ITEM_NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET1_ITEM_NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET1_CONTAINER_ART">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET1_CONTAINER_ART">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_CREATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET2_CREATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_CREATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET2_CREATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_UPDATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET2_UPDATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_SOURCE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET2_SOURCE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_TYPE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET2_TYPE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_LOCATION">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET2_LOCATION">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_SOURCE_ACCOUNT">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET2_SOURCE_ACCOUNT">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_IS_PRESETABLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="PRESETS:PRESET2_IS_PRESETABLE">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_ITEM_NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET2_ITEM_NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET2_CONTAINER_ART">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET2_CONTAINER_ART">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_CREATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET3_CREATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_UPDATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET3_UPDATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_SOURCE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET3_SOURCE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_TYPE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET3_TYPE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_LOCATION">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET3_LOCATION">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_SOURCE_ACCOUNT">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET3_SOURCE_ACCOUNT">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_IS_PRESETABLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="PRESETS:PRESET3_IS_PRESETABLE">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_ITEM_NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET3_ITEM_NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET3_CONTAINER_ART">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET3_CONTAINER_ART">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_CREATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET4_CREATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_UPDATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET4_UPDATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_SOURCE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET4_SOURCE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_TYPE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET4_TYPE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_LOCATION">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET4_LOCATION">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_SOURCE_ACCOUNT">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET4_SOURCE_ACCOUNT">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_IS_PRESETABLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="PRESETS:PRESET4_IS_PRESETABLE">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_ITEM_NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET4_ITEM_NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET4_CONTAINER_ART">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET4_CONTAINER_ART">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_CREATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET5_CREATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_UPDATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET5_UPDATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_SOURCE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET5_SOURCE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_TYPE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET5_TYPE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_LOCATION">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET5_LOCATION">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_SOURCE_ACCOUNT">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET5_SOURCE_ACCOUNT">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_IS_PRESETABLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="PRESETS:PRESET5_IS_PRESETABLE">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_ITEM_NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET5_ITEM_NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET5_CONTAINER_ART">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET5_CONTAINER_ART">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET6_UPDATED_ON">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="PRESETS:PRESET6_UPDATED_ON">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET6_SOURCE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET6_SOURCE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET6_TYPE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET6_TYPE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET6_LOCATION">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET6_LOCATION">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET6_SOURCE_ACCOUNT">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET6_SOURCE_ACCOUNT">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET6_IS_PRESETABLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalBoolean>
+					<defaultValue/>
+				</logicalBoolean>
+				<physicalBoolean groupId="PRESETS:PRESET6_IS_PRESETABLE">
+					<operationType>command</operationType>
+				</physicalBoolean>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET6_ITEM_NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET6_ITEM_NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PRESETS:PRESET6_CONTAINER_ART">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="PRESETS:PRESET6_CONTAINER_ART">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_PRESETS">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:ID">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:ID">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:MASTER_DEVICE_ID">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:MASTER_DEVICE_ID">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:STATUS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:STATUS">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:ROLE1_DEVICE_ID">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:ROLE1_DEVICE_ID">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:ROLE1_ROLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:ROLE1_ROLE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:ROLE1_IP_ADDRESS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:ROLE1_IP_ADDRESS">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:ROLE2_DEVICE_ID">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:ROLE2_DEVICE_ID">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:ROLE2_ROLE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:ROLE2_ROLE">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="GROUP:ROLE2_IP_ADDRESS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="GROUP:ROLE2_IP_ADDRESS">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_GROUP">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ERROR:ERROR">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ERROR:ERROR">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ERROR">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ERROR:VALUE">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger>
+					<defaultValue/>
+				</logicalInteger>
+				<physicalInteger groupId="ERROR:VALUE">
+					<operationType>command</operationType>
+				</physicalInteger>
+				<packets>
+					<packet id="GET_ERROR">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ERROR:NAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ERROR:NAME">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ERROR">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="ERROR:SEVERITY">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString>
+					<defaultValue/>
+				</logicalString>
+				<physicalString groupId="ERROR:SEVERITY">
+					<operationType>command</operationType>
+				</physicalString>
+				<packets>
+					<packet id="GET_ERROR">
+						<type>event</type>
+					</packet>
+				</packets>
+			</parameter>
+			<parameter id="PEER_ID">
+				<properties>
+					<!-- Needed for the CCU2. Must be writeable, otherwise it can't be used in the CCU. -->
+					<control>EASYBose.PEERID</control>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalInteger/>
+			</parameter>
+			<parameter id="ID">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+			</parameter>
+			<parameter id="IP_ADDRESS">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+			</parameter>
+			<parameter id="ROOMNAME">
+				<properties>
+					<writeable>false</writeable>
+					<casts>
+						<rpcBinary/>
+					</casts>
+				</properties>
+				<logicalString/>
+			</parameter>
+		</variables>
+	</parameterGroups>
+</homegearDevice>

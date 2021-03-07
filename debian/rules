@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+override_dh_auto_install:
+	dh_auto_install
+
+	mkdir -p $(CURDIR)/debian/homegear-Bose/etc/homegear/families
+	cp -R $(CURDIR)/misc/Config\ Directory/* $(CURDIR)/debian/homegear-Bose/etc/homegear/families
+	chmod 755 $(CURDIR)/debian/homegear-Bose/etc/homegear/families
+	chmod 644 $(CURDIR)/debian/homegear-Bose/etc/homegear/families/*
+
+	mkdir -p $(CURDIR)/debian/homegear-Bose/etc/homegear/devices/66
+	cp -R $(CURDIR)/misc/Device\ Description\ Files/* $(CURDIR)/debian/homegear-Bose/etc/homegear/devices/66
+	chmod -R 755 $(CURDIR)/debian/homegear-Bose/etc/homegear/devices/66
+	find $(CURDIR)/debian/homegear-Bose/etc/homegear/devices/66 -type f -exec chmod 644 -- {} +
+
+	mkdir -p $(CURDIR)/debian/homegear-Bose/var/lib/homegear
+	cp -R $(CURDIR)/misc/State\ Directory/* $(CURDIR)/debian/homegear-Bose/var/lib/homegear
+	chown -R root:root $(CURDIR)/debian/homegear-Bose/var/lib/homegear
+	find $(CURDIR)/debian/homegear-Bose/var/lib/homegear -type d -exec chmod 550 {} \;
+	find $(CURDIR)/debian/homegear-Bose/var/lib/homegear -type f -exec chmod 440 {} \;
+
+override_dh_strip:
+	dh_strip --dbg-package=homegear-Bose
+
+%:
+	dh $@ --parallel

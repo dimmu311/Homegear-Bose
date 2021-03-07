@@ -1,0 +1,14 @@
+Source: homegear-Bose
+Maintainer: Timo Renner <timo@renner.solutions>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 8), libhomegear-base (= <BASELIBVER>), libgcrypt20-dev, libgpg-error-dev (>= 1.10), libgnutls28-dev
+Homepage: https://github.com/dimmu311/Homegear-Bose
+
+Package: homegear-Bose
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libhomegear-base (= <BASELIBVER>), homegear (= <BASELIBVER>), libgcrypt20, libgnutlsxx28, libgpg-error0 (>= 1.10)
+Description: Homegear Family Module to Interact with Bose Soundtouch API
+ Homegear is a program to interface your home automation software 
+ with your smart home devices.
